@@ -22,8 +22,8 @@ public class Controller {
     @GetMapping(value = "/sign")
     public ResponseEntity<?> sign(@RequestParam String data) throws Exception {
         try {
-            String publicKeyByString = new String(Files.readAllBytes(Paths.get("D:\\MKG\\personal-project\\Signature\\src\\main\\java\\com\\example\\signature\\key_pair\\private_key.pem")));
-            String getPrivateKey = publicKeyByString
+            String privateKeyString = new String(Files.readAllBytes(Paths.get("D:\\MKG\\personal-project\\Signature\\src\\main\\java\\com\\example\\signature\\key_pair\\private_key.pem")));
+            String getPrivateKey = privateKeyString
                     .replaceAll("-----BEGIN PRIVATE KEY-----", "")
                     .replaceAll("-----END PRIVATE KEY-----", "")
                     .replaceAll("\r\n", "")
